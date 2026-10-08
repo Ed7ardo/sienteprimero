@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MÉTODO SIENTE PRIMERO – Inscripciones</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0712'/%3E%3Cpath d='M50 72C18 50 28 24 42 28c6 2 8 8 8 10 0-2 2-8 8-10 14-4 24 22-8 44z' fill='none' stroke='%23e1b45a' stroke-width='5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --gold: #e1b45a;
+      --gold2: #f3d89a;
+      --text: #f5efe6;
+      --muted: #b8adc4;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      min-height: 100%
+    }
+
+    body {
+      background: radial-gradient(ellipse at top, #2a1650 0, #120a24 45%, #07040f 100%) fixed;
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.5
+    }
+
+    .bar {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 10;
+      background: linear-gradient(90deg, #7a1f2b, #ff0000, #7a1f2b);
+      text-align: center;
+      padding: 10px 12px;
+      font-weight: 800;
+      font-size: clamp(12px, 3.2vw, 15px);
+      letter-spacing: .06em
+    }
+
+    .bar b {
+      font-variant-numeric: tabular-nums;
+      background: #0007;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-left: 6px;
+      letter-spacing: .04em
+    }
+
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+      text-align: center
+    }
+
+    .logo {
+      display: block;
+      width: clamp(150px, 42vw, 210px);
+      height: auto;
+      margin: 0 auto 18px
+    }
+
+    footer .logo {
+      width: 130px;
+      opacity: .9;
+      margin: 0 auto 14px
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 99px;
+      padding: 5px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      margin-bottom: 18px
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 6.4vw, 46px);
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 5px
+    }
+
+    h1 span {
+      color: var(--gold)
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: clamp(15px, 3.8vw, 19px);
+      margin-bottom: 22px
+    }
+
+    .sub strong {
+      color: var(--gold2)
+    }
+
+    .live {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--gold2)
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff4d4d;
+      animation: p 1.2s infinite
+    }
+
+    @keyframes p {
+      50% {
+        opacity: .25;
+        transform: scale(1.4)
+      }
+    }
+
+    .video {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+      border: 1px solid #e1b45a55;
+      border-radius: 14px;
+      box-shadow: 0 0 50px #e1b45a22;
+      overflow: hidden
+    }
+
+    .video span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 14px
+    }
+
+    .video video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      cursor: pointer
+    }
+
+    .snd {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      color: #2a1a00;
+      font-weight: 900;
+      font-size: clamp(13px, 3.6vw, 18px);
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 30px #e1b45a88;
+      animation: sp 1.4s infinite
+    }
+
+    @keyframes sp {
+      50% {
+        transform: translate(-50%, -50%) scale(1.06)
+      }
+    }
+
+    .pill {
+      display: inline-block;
+      margin: 18px auto 0;
+      background: #ffffff10;
+      border: 1px solid #ffffff22;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-size: 14px;
+      animation: bl 2s infinite
+    }
+
+    @keyframes bl {
+      50% {
+        border-color: var(--gold)
+      }
+    }
+
+    .cta {
+      display: none;
+      width: 100%;
+      max-width: 520px;
+      margin: 26px auto 0;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      color: #2a1a00;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: clamp(16px, 4.3vw, 21px);
+      padding: 18px 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 0 #a67c2a, 0 0 30px #e1b45a55
+    }
+
+    .cta.show {
+      display: block;
+      animation: fi 1s, pu 1.8s 1s infinite
+    }
+
+    @keyframes fi {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+    }
+
+    @keyframes pu {
+      50% {
+        transform: scale(1.03)
+      }
+    }
+
+    .warn {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #ff8a8a;
+      font-weight: 700
+    }
+
+    .prog {
+      height: 6px;
+      background: #ffffff18;
+      border-radius: 99px;
+      margin-top: 10px;
+      overflow: hidden
+    }
+
+    .prog i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transition: width 1s linear
+    }
+
+    .lock {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    #fb {
+      display: none;
+      margin-top: 44px;
+      text-align: left
+    }
+
+    #fb.show {
+      display: block;
+      animation: fi 1s
+    }
+
+    #fb h2 {
+      font-family: Georgia, serif;
+      text-align: center;
+      font-size: clamp(22px, 5.4vw, 32px);
+      margin-bottom: 18px
+    }
+
+    .fbg {
+      display: grid;
+      gap: 14px
+    }
+
+    @media(min-width:700px) {
+      .fbg {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .fc {
+      background: #ffffff0d;
+      border: 1px solid #e1b45a33;
+      border-radius: 14px;
+      padding: 18px
+    }
+
+    .fc .st {
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 8px
+    }
+
+    .fc p {
+      font-size: 15px;
+      color: var(--text)
+    }
+
+    .fc b {
+      display: block;
+      margin-top: 12px;
+      color: var(--gold2);
+      font-size: 14px
+    }
+
+    .hid {
+      display: none
+    }
+
+    #mr {
+      display: none;
+      margin-top: 44px;
+      text-align: left
+    }
+
+    #mr.show {
+      display: block;
+      animation: fi 1s
+    }
+
+    #mr h2 {
+      font-family: Georgia, serif;
+      text-align: center;
+      font-size: clamp(22px, 5.4vw, 32px);
+      margin: 0 0 16px
+    }
+
+    .two {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 40px
+    }
+
+    @media(min-width:700px) {
+      .two {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .bx {
+      background: #ffffff0d;
+      border: 1px solid #e1b45a33;
+      border-radius: 14px;
+      padding: 18px
+    }
+
+    .bx h3 {
+      color: var(--gold2);
+      font-size: 16px;
+      margin-bottom: 10px
+    }
+
+    .bx ul {
+      list-style: none
+    }
+
+    .bx li {
+      padding: 5px 0 5px 24px;
+      position: relative;
+      font-size: 15px
+    }
+
+    .bx li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold)
+    }
+
+    .bx.no li:before {
+      content: "✕";
+      color: #ff8a8a
+    }
+
+    details {
+      background: #ffffff0d;
+      border: 1px solid #ffffff18;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--gold2)
+    }
+
+    details p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .about {
+      text-align: center;
+      margin: 40px 0
+    }
+
+    .about p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 8px auto 0
+    }
+
+    .cta.cta2 {
+      display: block;
+      animation: pu 1.8s infinite;
+      margin: 10px auto 0
+    }
+
+    .disc {
+      max-width: 640px;
+      margin: 0 auto 10px;
+      font-size: 11px;
+      opacity: .8
+    }
+
+    .mq {
+      overflow: hidden;
+      white-space: nowrap;
+      background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
+      color: #2a1a00;
+      font-weight: 900;
+      letter-spacing: .14em;
+      font-size: 13px;
+      padding: 8px 0;
+      margin: 0 -16px 32px
+    }
+
+    .mq div {
+      display: inline-block;
+      animation: mv 18s linear infinite
+    }
+
+    @keyframes mv {
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    #pr {
+      display: none;
+      margin-top: 44px;
+      text-align: left
+    }
+
+    #pr.show {
+      display: block;
+      animation: fi 1s
+    }
+
+    #pr h2 {
+      font-family: Georgia, serif;
+      text-align: center;
+      font-size: clamp(22px, 5.4vw, 32px);
+      margin: 0 0 16px
+    }
+
+    .lead {
+      color: var(--muted);
+      text-align: center;
+      margin: -6px auto 18px;
+      max-width: 600px
+    }
+
+    .blk {
+      margin-bottom: 44px
+    }
+
+    .stp {
+      display: grid;
+      gap: 12px
+    }
+
+    @media(min-width:700px) {
+      .stp {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .stp .bx {
+      text-align: center
+    }
+
+    .stp .n {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      color: var(--gold)
+    }
+
+    .chips {
+      display: grid;
+      gap: 10px
+    }
+
+    @media(min-width:700px) {
+      .chips {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .chips div {
+      background: #ffffff0d;
+      border: 1px solid #e1b45a33;
+      border-radius: 12px;
+      padding: 14px 16px
+    }
+
+    .mod {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: #ffffff0d;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      font-size: 15px
+    }
+
+    .mod b {
+      color: var(--gold);
+      min-width: 28px
+    }
+
+    .bon {
+      background: #ffffff0d;
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 10px
+    }
+
+    .bon small {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: .12em
+    }
+
+    .bon p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px
+    }
+
+    .pbox {
+      background: #ffffff0d;
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      padding: 26px 16px;
+      text-align: center
+    }
+
+    .pbox .big {
+      font-size: clamp(46px, 14vw, 72px);
+      font-weight: 900;
+      color: var(--gold2);
+      line-height: 1.1
+    }
+
+    .pbox ul {
+      list-style: none;
+      margin: 14px 0;
+      text-align: left;
+      display: inline-block
+    }
+
+    .pbox li {
+      padding: 3px 0 3px 24px;
+      position: relative;
+      font-size: 15px
+    }
+
+    .pbox li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold)
+    }
+
+    .stk {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      background: #07040fee;
+      border-top: 1px solid #e1b45a55;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+      display: none
+    }
+
+    .stk.show {
+      display: block
+    }
+
+    .stk .cta {
+      margin: 0 auto;
+      padding: 14px;
+      animation: pu 1.8s infinite
+    }
+
+    body.sk {
+      padding-bottom: 80px
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px 16px 36px;
+      border-top: 1px solid #ffffff14;
+      letter-spacing: .05em
+    }
+
+    footer p+p {
+      margin-top: 8px
+    }
+
+    footer a {
+      color: inherit
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bar">ASISTE ANTES DE QUE SALGA DEL AIRE · <span>Termina en</span><b id="t">15:00</b></div>
+  <main class="wrap">
+    <div class="tag">MÉTODO SIENTE PRIMERO</div>
+    <h1>Usa la Ley de la Atracción para atraer <span>dinero, amor</span> y tus <span>mayores sueños</span></h1>
+    <p class="sub">Conoce el método que te enseña a <strong>salir del piloto automático y convertirte en
+        protagonista</strong> de tu propia vida.</p>
+    <div class="live"><span class="dot"></span><span><b id="v">432</b> personas viendo este video ahora</span></div>
+    <div class="video"><span>▶ Video aquí (16:9)</span><video id="vd" src="video/video.mp4" playsinline
+        preload="auto"></video>
+      <div class="snd" id="snd" style="display:none">🔊 TOCA PARA ACTIVAR EL SONIDO</div>
+    </div>
+    <div class="prog"><i id="pg"></i></div>
+    <p class="lock" id="lk">El botón se liberará al terminar el video</p>
+    <div class="pill">🔊 Tu video ya comenzó.<br><strong>Toca la pantalla para activar el sonido.</strong></div>
+    <a id="cta" class="cta" href="#">QUIERO MI TRANSFORMACIÓN AHORA</a>
+    <p id="warn" class="warn" style="display:none">⚠️ Esta oferta puede salir del aire en cualquier momento.</p>
+    <section id="mr">
+      <div class="mq">
+        <div id="mqi"></div>
+      </div>
+      <div class="blk">
+        <h2>¿Sientes que vives en piloto automático?</h2>
+        <p class="lead">Te levantas, cumples con todo… y por dentro algo se siente apagado. Si te suena familiar, no
+          eres la única.</p>
+        <div class="chips">
+          <div>Sueñas en grande, pero dudas de tu capacidad.</div>
+          <div>Postergas lo que quieres por miedo a arriesgar.</div>
+          <div>Te saboteas cuando las cosas empiezan a salir bien.</div>
+          <div>Haces mucho, pero sientes que la vida no fluye.</div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2>El método en 3 pasos simples</h2>
+        <div class="stp">
+          <div class="bx">
+            <div class="n">1</div>
+            <h3>Define</h3>
+            <p>Aclara qué quieres realmente para tu vida.</p>
+          </div>
+          <div class="bx">
+            <div class="n">2</div>
+            <h3>Siente</h3>
+            <p>Practica cada día el estado emocional que te acerca a ello.</p>
+          </div>
+          <div class="bx">
+            <div class="n">3</div>
+            <h3>Actúa</h3>
+            <p>Da pasos concretos, coherentes con lo que quieres.</p>
+          </div>
+        </div>
+      </div>
+      <div class="blk">
+        <h2>¿Es para ti?</h2>
+        <div class="two" style="margin-bottom:0">
+          <div class="bx">
+            <h3>Es para ti si…</h3>
+            <ul>
+              <li>Quieres salir del piloto automático</li>
+              <li>Estás dispuesta a practicar todos los días</li>
+              <li>Buscas un método simple y aplicable</li>
+            </ul>
+          </div>
+          <div class="bx no">
+            <h3>No es para ti si…</h3>
+            <ul>
+              <li>Buscas resultados mágicos sin actuar</li>
+              <li>No quieres comprometerte contigo misma</li>
+              <li>Esperas promesas de dinero fácil</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="blk">
+        <div id="mods"></div>
+      </div>
+      <div class="blk">
+        <div id="bons"></div>
+      </div>
+    </section>
+    <section id="fb">
+      <h2>Lo que dicen nuestras alumnas</h2>
+      <div class="fbg" id="fg"></div>
+    </section>
+    <section id="pr">
+      <div class="blk">
+        <div class="pbox">
+          <p class="lead" style="margin:0 0 6px">Oferta disponible por tiempo limitado</p>
+          <div class="big" id="price">US$ 9,99</div>
+          <p>Pago único · Acceso inmediato</p>
+          <ul>
+            <li>Todas las clases del método</li>
+            <li>Acceso desde celular, tablet o computadora</li>
+          </ul>
+          <a class="cta cta2" href="#">QUIERO MI TRANSFORMACIÓN AHORA</a>
+          <p class="warn">⚠️ Esta oferta puede salir del aire en cualquier momento.</p>
+        </div>
+      </div>
+      <div class="blk">
+        <h2>Garantía de 7 días</h2>
+        <p class="lead">Practica el método y decide con calma. Si no es para ti, solicita el reembolso dentro del plazo.
+        </p>
+      </div>
+      <div class="blk">
+        <h2>¿Funciona de verdad? Tus dudas, respondidas</h2>
+        <details open>
+          <summary>¿Realmente funciona?</summary>
+          <p>Este método no promete milagros ni dinero sin esfuerzo. Es un entrenamiento práctico para cambiar hábitos
+            mentales y emocionales y actuar de forma coherente con lo que quieres. Los resultados dependen de cada
+            persona y de su constancia.</p>
+        </details>
+        <details>
+          <summary>¿Cómo funciona el acceso?</summary>
+          <p>Se libera de inmediato al confirmar el pago. Lo recibes por correo y entras desde cualquier dispositivo.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cuánto tiempo necesito al día?</summary>
+          <p>Unos minutos diarios. Puedes avanzar a tu ritmo.</p>
+        </details>
+        <details>
+          <summary>¿Necesito creer en la espiritualidad?</summary>
+          <p>No. Es un trabajo de hábitos, emoción y enfoque, sin relación con ninguna religión.</p>
+        </details>
+        <details>
+          <summary>¿Recibo certificado?</summary>
+          <p>No. Es un proceso de desarrollo personal, no un curso técnico.</p>
+        </details>
+      </div>
+      <div class="about blk">
+        <h2>Quién te guía</h2>
+        <p>Camila Díaz</p>
+      </div>
+    </section>
+  </main>
+  <div class="stk" id="stk"><a class="cta cta2" href="#">QUIERO MI TRANSFORMACIÓN AHORA</a></div>
+  <footer>
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="30 130 1140 950" role="img"
+      aria-label="Método Siente Primero" xmlns:c2pa="http://c2pa.org/manifest">
+      <metadata>
+        <c2pa:manifest>
+          AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1YWQ5OGJlZC1iMjdiLTQ4MjctYTNkMy1mMWYzMDFmZDY0ZDcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaDbvDN10xHA2u8Nr57Hw62wAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0YzI2MWI1Zi1mYzg3LTQ4MWEtYTYwNC0xMTNiNTY2ZmI0ZTNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoA1eEg5RhTQz0f+QxDxss1QAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggknfvIbDGS2m9iO1tP5FVpu3WjTmuscOBc2b9bR5x+MukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPQNOeHxVx1HQX+WKUWYInAAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBxB+xHM3N+n9NE8cJFvK9Qp1VwbtEzkIEvTsoPBWyhOGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiaZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjVhZDk4YmVkLWIyN2ItNDgyNy1hM2QzLWYxZjMwMWZkNjRkNy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjNjYmE0OGVkLTkyYjMtNGQ3NS1hODY5LThmYzUxOGU2NWQzMHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCSd+8hsMZLab2I7W0/kVWm7daNOa6xw4FzZv1tHnH4y6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggpE+BXMDPYsy7ZergRcz6cWeEXdjmk7oAjA5oLmBP+B+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggB9QulvYg3CPJMsiCb5EXGhxMJPj9QIXlM0As8sVtG/l0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMSNnpRmv8mRCsQGyerHFcDgW4bK4FzX2H6TkjQMmZBPEIfE++QtU5WB5j1V8uq+mkUmdJZUxbJgw5T2Ucx8vCM=
+        </c2pa:manifest>
+      </metadata>
+      <defs>
+        <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f3d89a" />
+          <stop offset="1" stop-color="#c8963a" />
+        </linearGradient>
+      </defs>
+
+      <g transform="translate(600,290)" fill="none" stroke="url(#g2)" stroke-width="10" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle r="150" />
+        <path d="M0,78 C-130,-6 -92,-98 -34,-76 C-12,-67 0,-48 0,-38 C0,-48 12,-67 34,-76 C92,-98 130,-6 0,78 Z"
+          stroke-width="12" />
+        <path d="M112,-118 l8,22 l22,8 l-22,8 l-8,22 l-8,-22 l-22,-8 l22,-8 Z" fill="url(#g2)" stroke="none" />
+      </g>
+      <path fill="#c8963a"
+        d="M476.49 523.496V560.0H467.59799999999996V538.108L459.43399999999997 560.0H452.258L444.042 538.056V560.0H435.15V523.496H445.654L455.89799999999997 548.768L466.038 523.496ZM513.778 530.62V538.004H525.6859999999999V544.868H513.778V552.876H527.246V560.0H504.88599999999997V523.496H527.246V530.62ZM521.89 516.164 509.35799999999995 521.416V515.28L521.89 509.24800000000005ZM581.278 523.496V530.62H571.606V560.0H562.7139999999999V530.62H553.042V523.496ZM606.242 541.644Q606.242 536.288 608.7639999999999 532.024Q611.286 527.76 615.576 525.3679999999999Q619.866 522.976 625.0139999999999 522.976Q630.1619999999999 522.976 634.452 525.3679999999999Q638.742 527.76 641.212 532.024Q643.6819999999999 536.288 643.6819999999999 541.644Q643.6819999999999 547.0 641.1859999999999 551.29Q638.6899999999999 555.58 634.4259999999999 557.972Q630.1619999999999 560.364 625.0139999999999 560.364Q619.866 560.364 615.576 557.972Q611.286 555.58 608.7639999999999 551.29Q606.242 547.0 606.242 541.644ZM634.6339999999999 541.644Q634.6339999999999 536.808 632.0079999999999 533.922Q629.382 531.0360000000001 625.0139999999999 531.0360000000001Q620.5939999999999 531.0360000000001 617.968 533.896Q615.342 536.756 615.342 541.644Q615.342 546.48 617.968 549.366Q620.5939999999999 552.252 625.0139999999999 552.252Q629.382 552.252 632.0079999999999 549.3399999999999Q634.6339999999999 546.428 634.6339999999999 541.644ZM703.434 541.748Q703.434 547.104 701.068 551.264Q698.7019999999999 555.424 694.3599999999999 557.712Q690.0179999999999 560.0 684.2979999999999 560.0H670.622V523.496H684.2979999999999Q690.0699999999999 523.496 694.386 525.784Q698.7019999999999 528.072 701.068 532.206Q703.434 536.34 703.434 541.748ZM694.386 541.748Q694.386 536.704 691.578 533.896Q688.7699999999999 531.088 683.7259999999999 531.088H679.5139999999999V552.304H683.7259999999999Q688.7699999999999 552.304 691.578 549.548Q694.386 546.792 694.386 541.748ZM728.9179999999999 541.644Q728.9179999999999 536.288 731.4399999999998 532.024Q733.9619999999999 527.76 738.252 525.3679999999999Q742.5419999999999 522.976 747.6899999999998 522.976Q752.8379999999999 522.976 757.1279999999999 525.3679999999999Q761.4179999999999 527.76 763.8879999999999 532.024Q766.3579999999998 536.288 766.3579999999998 541.644Q766.3579999999998 547.0 763.8619999999999 551.29Q761.3659999999999 555.58 757.1019999999999 557.972Q752.8379999999999 560.364 747.6899999999998 560.364Q742.5419999999999 560.364 738.252 557.972Q733.9619999999999 555.58 731.4399999999998 551.29Q728.9179999999999 547.0 728.9179999999999 541.644ZM757.3099999999998 541.644Q757.3099999999998 536.808 754.6839999999999 533.922Q752.0579999999999 531.0360000000001 747.6899999999998 531.0360000000001Q743.2699999999999 531.0360000000001 740.6439999999999 533.896Q738.0179999999999 536.756 738.0179999999999 541.644Q738.0179999999999 546.48 740.6439999999999 549.366Q743.2699999999999 552.252 747.6899999999998 552.252Q752.0579999999999 552.252 754.6839999999999 549.3399999999999Q757.3099999999998 546.428 757.3099999999998 541.644Z" />
+      <path fill="#f5efe6"
+        d="M208.0075 740.65H250.77749999999997Q251.71749999999997 749.815 257.12249999999995 754.6325Q262.5275 759.45 271.22249999999997 759.45Q280.1525 759.45 285.3225 755.3375000000001Q290.49249999999995 751.225 290.49249999999995 743.94Q290.49249999999995 737.83 286.38 733.835Q282.2675 729.84 276.275 727.255Q270.28249999999997 724.67 259.23749999999995 721.38Q243.2575 716.445 233.15249999999997 711.51Q223.04749999999999 706.575 215.7625 696.94Q208.4775 687.3050000000001 208.4775 671.795Q208.4775 648.765 225.1625 635.7225000000001Q241.8475 622.6800000000001 268.6375 622.6800000000001Q295.8975 622.6800000000001 312.5825 635.7225000000001Q329.2675 648.765 330.4425 672.03H286.9675Q286.4975 664.04 281.0925 659.4575Q275.6875 654.875 267.22749999999996 654.875Q259.9425 654.875 255.4775 658.7525Q251.0125 662.63 251.0125 669.915Q251.0125 677.905 258.5325 682.37Q266.0525 686.835 282.03249999999997 692.005Q298.0125 697.41 308.0 702.345Q317.98749999999995 707.28 325.2725 716.6800000000001Q332.5575 726.08 332.5575 740.885Q332.5575 754.985 325.39 766.5Q318.22249999999997 778.015 304.5925 784.8299999999999Q290.9625 791.645 272.3975 791.645Q254.30249999999998 791.645 239.96749999999997 785.77Q225.6325 779.895 217.055 768.38Q208.4775 756.865 208.0075 740.65ZM401.4175 625.03V790.0H361.2325V625.03ZM474.7425 657.225V690.595H528.5575V721.615H474.7425V757.805H535.6075V790.0H434.5575V625.03H535.6075V657.225ZM713.2724999999999 790.0H673.0875L605.8774999999999 688.245V790.0H565.6925V625.03H605.8774999999999L673.0875 727.255V625.03H713.2724999999999ZM865.0875 625.03V657.225H821.3774999999999V790.0H781.1925V657.225H737.4825V625.03ZM929.4825 657.225V690.595H983.2974999999999V721.615H929.4825V757.805H990.3475V790.0H889.2975V625.03H990.3475V657.225Z" />
+      <path fill="#f5efe6"
+        d="M142.67499999999998 950.78H117.76499999999999V1010.0H77.57999999999998V845.03H142.67499999999998Q162.415 845.03 176.045 851.845Q189.67499999999998 858.66 196.48999999999998 870.645Q203.30499999999998 882.63 203.30499999999998 898.14Q203.30499999999998 912.475 196.72499999999997 924.3425Q190.14499999999998 936.21 176.515 943.495Q162.885 950.78 142.67499999999998 950.78ZM162.415 898.14Q162.415 888.27 156.77499999999998 882.865Q151.135 877.46 139.62 877.46H117.76499999999999V918.82H139.62Q151.135 918.82 156.77499999999998 913.415Q162.415 908.01 162.415 898.14ZM312.34999999999997 1010.0 278.03999999999996 947.725H268.405V1010.0H228.21999999999997V845.03H295.66499999999996Q315.16999999999996 845.03 328.91749999999996 851.845Q342.66499999999996 858.66 349.47999999999996 870.5274999999999Q356.29499999999996 882.395 356.29499999999996 896.965Q356.29499999999996 913.415 347.01249999999993 926.3399999999999Q337.72999999999996 939.265 319.635 944.67L357.7049999999999 1010.0ZM268.405 919.29H293.31499999999994Q304.35999999999996 919.29 309.88249999999994 913.885Q315.405 908.48 315.405 898.61Q315.405 889.21 309.88249999999994 883.8050000000001Q304.35999999999996 878.4 293.31499999999994 878.4H268.405ZM425.625 845.03V1010.0H385.44V845.03ZM645.5899999999999 845.03V1010.0H605.405V911.065L568.51 1010.0H536.0799999999999L498.95 910.83V1010.0H458.765V845.03H506.235L552.53 959.24L598.355 845.03ZM718.68 877.225V910.595H772.4949999999999V941.615H718.68V977.805H779.545V1010.0H678.495V845.03H779.545V877.225ZM893.76 1010.0 859.4499999999999 947.725H849.8149999999999V1010.0H809.63V845.03H877.0749999999999Q896.5799999999999 845.03 910.3274999999999 851.845Q924.0749999999999 858.66 930.8899999999999 870.5274999999999Q937.7049999999999 882.395 937.7049999999999 896.965Q937.7049999999999 913.415 928.4224999999999 926.3399999999999Q919.14 939.265 901.045 944.67L939.1149999999999 1010.0ZM849.8149999999999 919.29H874.7249999999999Q885.77 919.29 891.2925 913.885Q896.8149999999999 908.48 896.8149999999999 898.61Q896.8149999999999 889.21 891.2925 883.8050000000001Q885.77 878.4 874.7249999999999 878.4H849.8149999999999ZM960.035 927.045Q960.035 902.84 971.4324999999999 883.5699999999999Q982.8299999999999 864.3 1002.2175 853.49Q1021.605 842.6800000000001 1044.87 842.6800000000001Q1068.135 842.6800000000001 1087.5225 853.49Q1106.9099999999999 864.3 1118.0724999999998 883.5699999999999Q1129.235 902.84 1129.235 927.045Q1129.235 951.25 1117.955 970.6375Q1106.675 990.025 1087.405 1000.835Q1068.135 1011.645 1044.87 1011.645Q1021.605 1011.645 1002.2175 1000.835Q982.8299999999999 990.025 971.4324999999999 970.6375Q960.035 951.25 960.035 927.045ZM1088.345 927.045Q1088.345 905.19 1076.4775 892.1475Q1064.61 879.105 1044.87 879.105Q1024.895 879.105 1013.0274999999999 892.03Q1001.16 904.955 1001.16 927.045Q1001.16 948.9 1013.0274999999999 961.9425Q1024.895 974.985 1044.87 974.985Q1064.61 974.985 1076.4775 961.825Q1088.345 948.665 1088.345 927.045Z" />
+      <rect x="430" y="1060" width="340" height="5" rx="2.5" fill="url(#g2)" />
+    </svg>
+    <p><a href="#">POLÍTICA DE PRIVACIDAD</a> | <a href="#">TÉRMINOS DE USO</a></p>
+    <p class="disc">Contenido educativo. Los resultados pueden variar según cada persona y no se garantizan resultados
+      financieros, de pareja ni de otro tipo.</p>
+    <p>TODOS LOS DERECHOS RESERVADOS – 2026</p>
+  </footer>
+  <script>
+    (function () {
+      // Plan A: el botón y los testimonios se liberan a los 8:07 (487,2 s) de video, o antes si el video termina. Plan B: mismo tiempo con temporizador si el video no carga.
+      // Agrega ?preview a la URL para verlos de inmediato.
+      var VIDEO_SECONDS = 487;
+      // REEMPLAZA por testimonios REALES de tus alumnos (nombre, país y texto).
+      var FEEDBACKS = [
+        { n: "Domingues", t: "Empecé a prestar atención a cómo me hablaba a mí misma cada día. Me siento mucho más enfocada y con más calma." },
+        { n: "Marcus", t: "El video me hizo replantear cosas que hacía en automático. Ahora tomo decisiones con más claridad." },
+        { n: "Stephany", t: "Lo que más me gustó fue que es simple y se puede aplicar desde el primer día." }
+      ];
+      // EDITA: módulos y bonos reales de tu producto.
+      var MODULES = ["Introducción y principios del método", "El poder de sentir", "Desarrollo personal", "Gratitud y presente", "Eliminando bloqueos", "Intención y acción", "Plan y rutina diaria"];
+
+      var mt = "OFERTA POR TIEMPO LIMITADO · ".repeat(6); document.getElementById("mqi").textContent = mt + mt;
+      var cta = document.getElementById("cta"), warn = document.getElementById("warn"), fb = document.getElementById("fb"), pg = document.getElementById("pg"), lk = document.getElementById("lk");
+      document.getElementById("fg").innerHTML = FEEDBACKS.map(function (f) {
+        return '<div class="fc"><div class="st">★★★★★</div><p>' + f.t + '</p><b>' + f.n + '</b></div>'
+      }).join("");
+      var done = false, unlocked = false, ctaVisible = !("IntersectionObserver" in window) ? false : true, stk = document.getElementById("stk"), vd = document.getElementById("vd");
+      function updStk() { stk.classList.toggle("show", unlocked && !ctaVisible) }
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { ctaVisible = e[0].isIntersecting; updStk() }).observe(cta);
+      else { ctaVisible = false }
+      function showCta() { if (done) return; done = true; pg.style.width = "100%"; lk.style.display = "none"; cta.classList.add("show"); fb.classList.add("show"); document.getElementById("mr").classList.add("show"); document.getElementById("pr").classList.add("show"); unlocked = true; document.body.classList.add("sk"); warn.style.display = "block"; setTimeout(updStk, 250) }
+      function timer() { var el = 0, iv = setInterval(function () { el++; pg.style.width = Math.min(100, el / VIDEO_SECONDS * 100) + "%"; if (el >= VIDEO_SECONDS) { clearInterval(iv); showCta() } }, 1000) }
+      if (/preview/.test(location.search)) showCta();
+      else if (vd) {
+        var snd = document.getElementById("snd");
+        function sound() { vd.muted = false; vd.currentTime = 0; snd.style.display = "none"; var q = vd.play(); if (q && q.catch) q.catch(function () { }) }
+        vd.addEventListener("click", function () { if (vd.muted) sound(); else if (vd.paused) vd.play() });
+        snd.addEventListener("click", sound);
+        vd.addEventListener("timeupdate", function () { if (done) return; if (vd.duration) pg.style.width = (vd.currentTime / vd.duration * 100) + "%"; if (vd.currentTime >= VIDEO_SECONDS) showCta() });
+        vd.addEventListener("ended", showCta);
+        vd.addEventListener("error", function () { vd.style.display = "none"; timer() });
+        // intenta con sonido; si el navegador lo bloquea, empieza sin sonido y muestra el aviso
+        vd.muted = false; var pp = vd.play();
+        if (pp && pp.catch) pp.catch(function () { vd.muted = true; snd.style.display = "block"; var r = vd.play(); if (r && r.catch) r.catch(function () { }) });
+      } else timer();
+
+      var K = "offer_end", end;
+      try { end = +localStorage.getItem(K) } catch (e) { }
+      if (!end || end < Date.now()) { end = Date.now() + 15 * 60 * 1000; try { localStorage.setItem(K, end) } catch (e) { } }
+      var t = document.getElementById("t");
+      function tick() {
+        var l = end - Date.now();
+        if (l <= 0) { end = Date.now() + 5 * 60 * 1000; try { localStorage.setItem(K, end) } catch (e) { } l = end - Date.now() }
+        var m = Math.floor(l / 60000), s = Math.floor(l % 60000 / 1000);
+        t.textContent = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+      }
+      tick(); setInterval(tick, 1000);
+
+      var n = 300 + Math.floor(Math.random() * 400), v = document.getElementById("v");
+      function show() { v.textContent = n.toLocaleString("es") }
+      show();
+      setInterval(function () { n += Math.floor(Math.random() * 61) - 30; n = Math.max(100, Math.min(1000, n)); show() }, 2500);
+    })();
+  </script>
+</body>
+
+</html>
